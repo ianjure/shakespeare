@@ -1,6 +1,7 @@
 import re
 import json
 import http.client
+import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
@@ -32,7 +33,7 @@ def generate_script(prompt, video_length, target_audience, creativity, api_key):
       "q": prompt
     })
     headers = {
-      'X-API-KEY': '1469508ac2361b6216e234933538fbf89f302251',
+      'X-API-KEY': st.secrets["SERPER_API"],
       'Content-Type': 'application/json'
     }
     conn.request("POST", "/search", payload, headers)
