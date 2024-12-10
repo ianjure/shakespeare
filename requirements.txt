@@ -1,0 +1,5 @@
+fpdf2
+streamlit
+langchain
+langchain-community
+langchain-google-genai
